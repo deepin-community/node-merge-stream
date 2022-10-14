@@ -1,0 +1,18 @@
+Description: Increase test timeout
+Author: Xavier Guimard <yadd@debian.org>
+Bug-Debian: https://bugs.debian.org/854495
+Forwarded: not-needed
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2019-02-20
+
+--- a/test.js
++++ b/test.js
+@@ -7,7 +7,7 @@
+ 
+ function test (name, fn, c) {
+   var combined = c || merge();
+-  var to = after(1000, process.emit.bind(process), 'error', new Error('Timed out: ' + name))
++  var to = after(10000, process.emit.bind(process), 'error', new Error('Timed out: ' + name))
+   combined.on('end', function () {
+     clearTimeout(to)
+   });

@@ -1,0 +1,13 @@
+Description: Use stream
+ Use stream instead of readable-stream
+Last-Update: 2019-12-04
+--- a/index.js
++++ b/index.js
+@@ -1,6 +1,6 @@
+ 'use strict';
+ 
+-const { PassThrough } = require('stream');
++const PassThrough = require('stream').PassThrough
+ 
+ module.exports = function (/*streams...*/) {
+   var sources = []

@@ -1,0 +1,24 @@
+Source: node-merge-stream
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Sruthi Chandran <srud@disroot.org>
+Section: javascript
+Priority: optional
+Testsuite: autopkgtest-pkg-nodejs
+Build-Depends: debhelper-compat (= 13),
+               node-from2,
+               dh-sequence-nodejs
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-merge-stream
+Vcs-Git: https://salsa.debian.org/js-team/node-merge-stream.git
+Homepage: https://github.com/grncdr/merge-stream#readme
+Rules-Requires-Root: no
+
+Package: node-merge-stream
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Provides: ${nodejs:Provides}
+Description: Create a stream that emits events from multiple other streams
+ This is adapted from event-stream separated into a new module, using Streams3.
+ .
+ Node.js is an event-based server-side JavaScript engine.
